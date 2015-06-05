@@ -1,23 +1,40 @@
-$(".design h3").mouseenter(function() {
-    console.log("hov")
-    $(".design").css({ '-webkit-clip-path': 'polygon(10% 100%, 9% 0, 100% 0, 100% -25%)',
-        'clip-path': 'polygon(10% 100%, 9% 0, 100% 0, 100% -25%)'});
+var $designHeader = $(".design h3");
+var $designSection = $(".design");
+var $developHeader = $(".develop h3");
+var $developSection = $(".develop");
+
+
+$designHeader.mouseenter(function() {
+    $designSection.addClass("active");
+    $developHeader.fadeOut();
+    $designHeader.stop().animate({
+        marginTop: "-15%"
+    }, 800);
 });
 
-$(".design h3").mouseout(function() {
-    $(".design").css({ '-webkit-clip-path': 'polygon(10% 100%, 9% 0, 100% 0, 100% -65%)',
-        'clip-path': 'polygon(10% 100%, 9% 0, 100% 0, 100% -65%)'});
+$designHeader.mouseout(function() {
+    $designSection.removeClass("active");
+    $developHeader.fadeIn();
+    $designHeader.stop().animate({
+        marginTop: "3%"
+    }, 800);
 });
 
 
-$(".develop h3").mouseenter(function() {
-    $(".design").css({ '-webkit-clip-path': 'polygon(10% 100%, 9% 0, 100% 0, 100% -260%)',
-        '-webkit-clip-path': 'polygon(10% 100%, 9% 0, 100% 0, 100% -260%)'});
+$developHeader.mouseenter(function() {
+    $designSection.addClass("develop-active");
+    $developSection.addClass("active");
+    $designHeader.animate({
+        opacity: 0
+    }, 800);
 });
 
-$(".develop h3").mouseout(function() {
-    $(".design").css({ '-webkit-clip-path': 'polygon(10% 100%, 9% 0, 100% 0, 100% -65%)',
-        'clip-path': 'polygon(10% 100%, 9% 0, 100% 0, 100% -65%)'});
+$developHeader.mouseout(function() {
+    $designSection.removeClass("develop-active");
+    $developSection.removeClass("active");
+    $designHeader.animate({
+        opacity: 1
+    }, 800);
 });
 
 

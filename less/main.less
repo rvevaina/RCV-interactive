@@ -12,62 +12,68 @@
     height: 600px;
     margin-bottom: 3%;
     position: relative;
-    background: rgb(251, 105, 100);
+    background: rgba(251, 105, 100, 1);
     -webkit-clip-path: polygon(10% 100%, 9% 0, 100% 0, 100% -65%);
     clip-path: polygon(10% 100%, 9% 0, 100% 0, 100% -65%);
     z-index: 100;
-    transition: all 1s ease;
-      //&:hover {
-      //    -webkit-clip-path: polygon(10% 100%, 9% 0, 100% 0, 100% -25%);
-      //    clip-path: polygon(15% 100%, 9% 0, 100% 0, 104% -25%);
-      //}
-      //.overlay {
-      //  position: absolute;
-      //  background: rgba(0, 0, 0, 0.2);
-      //  left: 0;
-      //  top: 0;
-      //  height: 100%;
-      //  width: 100%;
-      //  transition: all 0.5s ease-in;
-      //}
-    h3.title{
+    transition: all 1.5s ease;
+    &.active{
+      background: rgba(251, 105, 100, 0.7);
+      -webkit-clip-path: polygon(10% 100%, 9% 0, 100% 0, 100% -25%);
+      clip-path: polygon(10% 100%, 9% 0, 100% 0, 100% -25%);
+      transition: all 1.5s ease;
+    }
+    &.develop-active{
+      -webkit-clip-path: polygon(10% 100%, 9% 0, 100% 0, 100% -260%);
+      clip-path: polygon(10% 100%, 9% 0, 100% 0, 100% -260%);
+      transition: all 1.5s ease;
+    }
+    //&:hover{
+    //  h3.title{
+    //    margin: -15% 11%;
+    //  }
+    //}
+    .content{
       position: absolute;
       z-index: 101;
-      margin: 23% 11%;
-      color: white;
-      text-transform: uppercase;
-      font-size: 5rem;
-      PADDING: 5%;
-      cursor: pointer;
+      margin: 22% 11%;
+      h3.title {
+        color: white;
+        text-transform: uppercase;
+        font-size: 5rem;
+        PADDING: 25% 5%;
+        cursor: pointer;
+      }
+      img.vector, p.text{
+        opacity: 0;
+      }
     }
   }
   .develop {
     position: absolute;
-    right: 0;
+    right: 3.5%;
     top: 0;
     width: 95%;
     height: 600px;
-    background: rgb(192, 195, 213);
-    //-webkit-clip-path: polygon(0 100%, 82% -27%, 100% 0, 100% 50%);
-    //clip-path: polygon(0 100%, 82% -27%, 100% 0, 100% 50%);
-    //.overlay {
-    //  position: absolute;
-    //  background: rgba(0, 0, 0, 0.2);
-    //  left: 0;
-    //  top: 0;
-    //  height: 100%;
-    //  width: 100%;
-    //  transition: all 0.5s ease-in;
-    //}
+    background: rgba(95, 161, 224, 0.8);
+    transition: all 1.5s ease;
+    &.active{
+      background: rgba(95, 161, 224, 0.6);
+    }
     h3.title {
       position: absolute;
       z-index: 101;
-      margin: 23% 51%;
+      margin: 3% 52%;
       color: white;
       text-transform: uppercase;
       font-size: 5rem;
-      PADDING: 5%;
+      PADDING: 25% 5%;
       cursor: pointer;
+      &:hover {
+        .develop{
+          background: rgba(95, 161, 224, 0.5);
+        }
+      }
     }
   }
 }
