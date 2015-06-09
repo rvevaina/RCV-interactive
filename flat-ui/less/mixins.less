@@ -229,6 +229,13 @@
           animation-direction: @direction;
 }
 
+//Keyframes
+
+.keyframes(@name; @arguments) {
+  @-moz-keyframes @name { @arguments(); }
+  @-webkit-keyframes @name { @arguments(); }
+  @keyframes @name { @arguments(); }
+}
 
 // Backface visibility
 // Prevent browsers from flickering when using CSS 3D transforms.
