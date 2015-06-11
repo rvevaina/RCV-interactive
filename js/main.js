@@ -26,7 +26,7 @@ $( document ).ready(function() {
         $developHeader.stop().fadeToggle("slow");
         if(toggle === 0){
             $designContent.stop().animate({
-                margin: "-5% -9%"
+                margin: "-5% -7%"
             }, 1000);
             $designHeader.animate({
                 fontSize: "7rem"
@@ -111,6 +111,13 @@ $('.carousel').carousel({
 //Parallax
 
     $(".contact-landing").each(function(){
-        $(this).parallax('50%', 0.3, true)
+        $(this).parallax('50%', 0.2, true)
     });
+
+
+    $('iframe').load( function() {
+        $('iframe').contents().find("head")
+            .append($("<style type='text/css'>  body{display:none !important;}  </style>"));
+    });
+
 }); //Document ready
